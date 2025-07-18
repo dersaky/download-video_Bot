@@ -11,5 +11,8 @@ TIKTOK_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.3
 YOUTUBE_QUALITY = "best"
 
 # Telegram settings
-# Замените 'YOUR_BOT_TOKEN_HERE' на ваш токен, полученный от @BotFather
-TELEGRAM_TOKEN = "YOUR_BOT_TOKEN_HERE" 
+# Чтобы получить токен:
+# 1. Откройте Telegram и найдите @BotFather
+# 2. Отправьте команду /newbot и следуйте инструкциям
+# 3. После создания бота вы получите токен, который нужно вставить ниже
+TELEGRAM_TOKEN = "8082961558:AAHOf7GjX6uSsJCiuzeaK9F-IgCNvRXQEEw"  # Ваш токен от BotFather 
