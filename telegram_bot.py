@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 youtube_downloader = YouTubeDownloader()
 tiktok_downloader = TikTokDownloader()
 
-def start(update: Update, context: CallbackContext) -> None:
+def start(update, context):
     """Send a message when the command /start is issued."""
     user = update.effective_user
     update.message.reply_text(
@@ -25,7 +25,7 @@ def start(update: Update, context: CallbackContext) -> None:
         'Просто отправь мне ссылку на видео, и я скачаю его для тебя.'
     )
 
-def help_command(update: Update, context: CallbackContext) -> None:
+def help_command(update, context):
     """Send a message when the command /help is issued."""
     update.message.reply_text(
         'Отправь мне ссылку на видео с YouTube или TikTok, и я скачаю его для тебя.\n'
@@ -34,7 +34,7 @@ def help_command(update: Update, context: CallbackContext) -> None:
         '/help - Показать справку'
     )
 
-def process_url(update: Update, context: CallbackContext) -> None:
+def process_url(update, context):
     """Process the URL sent by the user."""
     url = update.message.text
     
@@ -50,7 +50,7 @@ def process_url(update: Update, context: CallbackContext) -> None:
             'Пожалуйста, отправьте корректную ссылку.'
         )
 
-def download_youtube_video(update: Update, context: CallbackContext, url: str) -> None:
+def download_youtube_video(update, context, url):
     """Download a video from YouTube and send it to the user."""
     update.message.reply_text('Скачиваю видео с YouTube...')
     
@@ -73,7 +73,7 @@ def download_youtube_video(update: Update, context: CallbackContext, url: str) -
         logger.error(f"Error downloading YouTube video: {str(e)}")
         update.message.reply_text('Произошла ошибка при скачивании видео. Пожалуйста, попробуйте позже.')
 
-def download_tiktok_video(update: Update, context: CallbackContext, url: str) -> None:
+def download_tiktok_video(update, context, url):
     """Download a video from TikTok and send it to the user."""
     update.message.reply_text('Скачиваю видео с TikTok...')
     
@@ -96,7 +96,7 @@ def download_tiktok_video(update: Update, context: CallbackContext, url: str) ->
         logger.error(f"Error downloading TikTok video: {str(e)}")
         update.message.reply_text('Произошла ошибка при скачивании видео. Пожалуйста, попробуйте позже.')
 
-def main() -> None:
+def main():
     """Start the bot."""
     # Create the Updater and pass it your bot's token
     updater = Updater(TELEGRAM_TOKEN)
